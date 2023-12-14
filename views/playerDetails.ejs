@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <div class="playerDetails">
+            <div class="info">
+    <h1>Player Details</h1>
+    <img src="<%= player.photo %>" alt="Player Photo" style="max-width: 100%;">
+    <p><%= player.name %></p>
+   
+    <% 
+    function formatDateOfBirth(dateOfBirth) {
+        const dob = new Date(dateOfBirth);
+        const options = { month: 'short', day: 'numeric', year: 'numeric' };
+        const formattedDOB = dob.toLocaleDateString('en-US', options);
+        const age = calculateAge(dob);
+        return `${formattedDOB} (${age} years)`;
+    }
+
+    function calculateAge(dob) {
+        const today = new Date();
+        const birthDate = new Date(dob);
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDiff = today.getMonth() - birthDate.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
+    }
+
+    var age= formatDateOfBirth(player.dateOfBirth);
+    %>
+
+    <p><%=age %></p>
+    <h3>Personal Information</h3>
+    <p> Number of Matches: <%= player.matches %></p>
+    <p> Runs: <%= player.score %></p>
+    <p> Number of Fifties: <%= player.fifties %></p>
+    <p> Number of centuries: <%= player.centuries %></p>
+    <p> Avg: <%= player.average %></p>
+    <p> wickets: <%= player.wickets %></p>
+</div>
+
+<div class="career">
+    <h3>Career</h3>
+    <p><%= player.career %></p>
+</div>
+
+    <form id="search-form" action="/playerDetails" method="GET">
+        <div class="form-group">
+            <label for="searchName">Search player:</label>
+            <input type="text" id="searchName" name="searchName">
+        </div>
+        <button type="submit">Search</button>
+    </form>
+    <form action="/editPlayer" method="GET">
+        <div class="editBtn">
+            <input type="hidden" name="searchName" value="<%= player.name %>">
+            <input type="hidden" name="playerId" value="<%= player.id %>">
+            <button type="submit"> Edit Player</button>
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>

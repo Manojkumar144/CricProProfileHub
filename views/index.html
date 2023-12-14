@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CricPro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+      <form action="/api/playerProfiles" method="POST">
+          <h1>Player Information</h1>
+          
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+          </div>
+      
+          <div class="form-group">
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="date" id="dateOfBirth" name="dateOfBirth">
+          </div>
+      
+          <div class="form-group">
+            <label for="photo">Photo Url:</label>
+            <input type="url" id="photo" name="photo">
+          </div>
+      
+          <div class="form-group">
+            <label for="birthPlace">Birthplace:</label>
+            <input type="text" id="birthPlace" name="birthPlace">
+          </div>
+      
+          <div class="form-group">
+            <label for="career">Career:</label>
+            <textarea id="career" name="career"></textarea>
+          </div>
+      
+          <div class="form-group">
+            <label for="matches">Number of Matches:</label>
+            <input type="number" id="matches" name="matches">
+          </div>
+      
+          <div class="form-group">
+            <label for="score">Score:</label>
+            <input type="number" id="score" name="score">
+          </div>
+      
+          <div class="form-group">
+            <label for="fifties">Fifties:</label>
+            <input type="number" id="fifties" name="fifties">
+          </div>
+      
+          <div class="form-group">
+            <label for="centuries">Centuries:</label>
+            <input type="number" id="centuries" name="centuries">
+          </div>
+      
+          <div class="form-group">
+            <label for="wickets">Wickets:</label>
+            <input type="number" id="wickets" name="wickets">
+          </div>
+      
+          <div class="form-group">
+            <label for="average">Average:</label>
+            <input type="number" id="average" name="average">
+          </div>      
+          <button type="submit">Submit</button>
+        </form>
+
+        <form id="search-form" action="/playerDetails" method="GET">
+          <div class="form-group">
+              <label for="searchName">search player:</label>
+              <input type="text" id="searchName" name="searchName">
+          </div>
+          <button type="submit">Search</button>
+      </form>
+       
+      </div> 
+
+</body>
+</html>

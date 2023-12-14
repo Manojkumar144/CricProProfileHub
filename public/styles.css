@@ -1,0 +1,92 @@
+
+body{
+    background-color:#FAEED1;
+    font-family: sans-serif;
+    margin: 10px;
+  }
+
+form {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+form#search-form {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+  .main-container {
+    border: 1px solid black;
+    border-radius: 6px;
+    width: 325px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+    box-sizing: border-box;
+    background-color:white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border:none;
+    margin:auto;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: auto;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: green;
+    color: white;
+    text-align: center;
+    width: 100px;
+  }
+  
+  input{
+    padding:5px;
+  }
+  
+  textarea{
+    padding:30px;
+  }
+
+
+  .playerDetails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.playerDetails img {
+    max-width: 100%;
+}
+
+.playerDetails .career {
+    flex: 1;
+    margin-left: 20px;
+    margin-top:20%;
+}
+
+.editBtn{
+  position: relative;
+  margin-top:70%;
+  margin-right:70px;
+}
